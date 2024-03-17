@@ -3,8 +3,8 @@ from sqlalchemy.orm import Session
 from . import db_models
 
 
-def get_patient(db: Session, patient_id: int):
-    return db.query(db_models.Patient).filter(db_models.Patient.id == patient_id).first()
+def get_physician(db: Session, physician_id: int):
+    return db.query(db_models.Physician).filter(db_models.Physician.id == physician_id).first()
 
-def get_patients(db: Session, skip: int = 0, limit: int = 100):
-    return db.query(db_models.Patient).offset(skip).limit(limit).all()
+def get_physicians(db: Session, skip: int = 0, limit: int = 100):
+    return db.query(db_models.Physician).offset(skip).limit(limit).all()
